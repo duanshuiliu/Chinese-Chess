@@ -616,6 +616,16 @@
             }
 
             // 2. 棋子 -- 客观判断（移动该棋子，可能会造成将军的局面）
+
+            // 2-1. 被将
+            let $cloneS = $startPiece.clone();
+            let $cloneE = $endPiece.clone();
+
+            $startCell.find('.cell-piece').children().remove();
+            
+            $endCell.find('.cell-piece').children().remove();
+            $endCell.find('.cell-piece').append($cloneS);
+
             let $kings     = $table.find('.chess-king');
             let $kingOwn   = null;
             let $kingEnemy = null;
@@ -639,16 +649,6 @@
             let $kingEnemyParentTd = $kingEnemy.parents('td');
             let kingEnemyRow       = $kingEnemyParentTr.index();
             let kingEnemyCol       = $kingEnemyParentTd.index();
-            // console.log(kingOwnRow, kingOwnCol, kingEnemyRow, kingEnemyCol);
-
-            // 2-1. 被将
-            let $cloneS = $startPiece.clone();
-            let $cloneE = $endPiece.clone();
-
-            $startCell.find('.cell-piece').children().remove();
-            
-            $endCell.find('.cell-piece').children().remove();
-            $endCell.find('.cell-piece').append($cloneS);
 
             let beKill = false;
             let kill   = false;
