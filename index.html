@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中国象棋</title>
+    <link rel="stylesheet" href="./css/chess.css">
+</head>
+<body>
+    <div class="header"></div>
+    <div class="content">
+        <div class="content-control">
+            <button type="button" class="btn btn-blue" id="chess-start">开始</button>
+            <button type="button" class="btn btn-blue" id="chess-regret">悔棋</button>
+        </div>
+        <div class="content-container">
+            <!-- 棋盘 -->
+            <div class="chess-container"></div>
+            <!-- 计时器 -->
+            <div class="clock-container">
+                <div class="clock">
+                    <div class="clock-box">
+                        <div class="timepiece time-total">
+                            <label class="label">总时长</label>
+                            <p class="time">0</p>
+                        </div>
+                        <div class="timepiece time-current">
+                            <label class="label">倒计时</label>
+                            <p class="time">0</p>
+                        </div>
+                    </div>
+                    <div class="clock-box">
+                        <div class="timepiece time-total">
+                            <label class="label">总时长</label>
+                            <p class="time">0</p>
+                        </div>
+                        <div class="timepiece time-current">
+                            <label class="label">倒计时</label>
+                            <p class="time">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <div class="tip" id="tip">
+        <div class="tip-container">
+            <p class="tip-title1 tip-msg">Hello world</p>
+        </div>
+    </div>
+
+    <script src="./js/jquery/dist/jquery.min.js"></script>
+    <script src="./js/chess-2.0.js"></script>
+    <script>
+        $(".chess-container").myChess();
+    </script>
+</body>
+</html>
