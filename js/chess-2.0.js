@@ -216,8 +216,7 @@
                                     temp.play   = chessData.play;
                                     
                                     chessData.move.push(temp);
-
-                                    console.log(chessData);
+                                    // console.log(chessData);
 
                                     tempMoveData = {};
                                     this._state = 'move-end';
@@ -1049,7 +1048,6 @@
                 [startRow+1, startCol],
             ];
 
-
             for(let i in tempCells) {
                 let row = tempCells[i][0];
                 let col = tempCells[i][1];
@@ -1076,7 +1074,7 @@
                     for(let m = row-1; m >= 0; m--) {
                         let $tempPiece = $table.find("tr:eq("+m+") td:eq("+col+") .chess-piece");
 
-                        if($tempPiece.length >= 1) {
+                        if($tempPiece.length >= 1 && m != startRow) {
                             if($tempPiece.hasClass('chess-king')) position = true;
                             break;
                         }
@@ -1085,7 +1083,7 @@
                     for(let m = row+1; m < chessRow; m++) {
                         let $tempPiece = $table.find("tr:eq("+m+") td:eq("+col+") .chess-piece");
 
-                        if($tempPiece.length >= 1) {
+                        if($tempPiece.length >= 1 && m != startRow) {
                             if($tempPiece.hasClass('chess-king')) position = true;
                             break;
                         }
